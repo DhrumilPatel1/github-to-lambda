@@ -15,9 +15,7 @@ phases:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
-      - zip -r9 ../github-to-lambda-demo.zip .
-      - cd ..
-      - zip -g github-to-lambda-demo.zip index.js
+      - zip -r9 github-to-lambda-demo.zip .
     post_build:
       commands:
         - echo "Updating lambda Function..."
