@@ -1,4 +1,4 @@
 function lambda_handler(params) {
-    console.log("CALLED IN YML");
+    console.log("CALLdsED IN YML");
     return "CALLEsddsDddd BY LAMBDA"
 }
