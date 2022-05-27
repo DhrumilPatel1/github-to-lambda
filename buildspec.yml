@@ -17,7 +17,7 @@ phases:
       - ls -la
       - zip -r9 ../github-to-lambda-demo.zip .
       - cd ..
-      - zip -g github-to-lambda-demo.zip lambda_function.js
+      - zip -g github-to-lambda-demo.zip index.js
     post_build:
       commands:
         - echo "Updating lambda Function..."
