@@ -1,3 +1,3 @@
-function lambda_demo(params) {
+function lambda_handler(params) {
     return "CALLED BY LAMBDA"
 }
