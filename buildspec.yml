@@ -3,7 +3,7 @@ version: 0.2
 phases:
   install:
     runtime-versions:
-      nodejs: 14.x
+      nodejs: latest
   pre_build:
     on-failure: ABORT
     commands:
@@ -15,11 +15,11 @@ phases:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
-      - zip -r9 ../deployment_package.zip .
+      - zip -r9 ../github-to-lambda-demo.zip .
       - cd ..
-      - zip -g deployment_package.zip lambda_function.js
+      - zip -g github-to-lambda-demo.zip lambda_function.js
     post_build:
       commands:
         - echo "Updating lambda Function..."
-        - aws lambda update-function-code --function-name github-to-lambda-demo --zip-file fileb://deployment_package.zip
+        - aws lambda update-function-code --function-name github-to-lambda-demo --zip-file fileb://github-to-lambda-demo.zip
         - echo "DONE!!"
