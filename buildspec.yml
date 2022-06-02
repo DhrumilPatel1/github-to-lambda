@@ -19,7 +19,6 @@ phases:
         - echo "Updating lambda Function..."
         
         - aws lambda update-function-code --function-name github-to-lambda-demo --zip-file fileb://github-to-lambda-demo.zip
-        - aws deploy push --application-name lambda-deploy --s3-location s3://astro-images/assets/github-to-lambda-demo.zip --ignore-hidden-files
         - echo "DONE!!"
 
 
