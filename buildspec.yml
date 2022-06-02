@@ -9,16 +9,16 @@ phases:
     commands:
       - echo source version - $CODEBUILD_RESOLVED_SOURCE_VERSION
       - echo Installing source NPM dependencies...
-     
-
   build:
     commands:
       - echo "Zipping deployment package..."
       - ls -la
       - zip -r9 github-to-lambda-demo.zip .
-    post_build:
-      commands:
+  post_build:
+    commands:
         - echo "Updating lambda Function..."
+        
+        - aws deploy push --application-name github-to-lambda-demo --s3-location s3://astro-images/github-to-lambda-demo.zip --ignore-hidden-files
         - aws lambda update-function-code --function-name github-to-lambda-demo --zip-file fileb://github-to-lambda-demo.zip
         - echo "DONE!!"
-          # aws lambda update-function-code --function-name prod_terraform_device_delete_equalizer_profile_info_DELETE --zip-file fileb://device_delete_equalizer_profile_info_DELETE.zip
+
