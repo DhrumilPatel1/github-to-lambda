@@ -21,3 +21,4 @@ phases:
         - echo "Updating lambda Function..."
         - aws lambda update-function-code --function-name github-to-lambda-demo --zip-file fileb://github-to-lambda-demo.zip
         - echo "DONE!!"
+          # aws lambda update-function-code --function-name prod_terraform_device_delete_equalizer_profile_info_DELETE --zip-file fileb://device_delete_equalizer_profile_info_DELETE.zip
