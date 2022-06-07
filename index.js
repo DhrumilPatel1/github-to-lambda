@@ -1,4 +1,5 @@
-module.exports.handler = function handler(params) {
+module.exports.handler = function handler() {
     console.log("I asasssssssadasdddaaM  Dhrsadfgdsasumil Patel");
-    return "a by lambda"
+
+    return {a:"a by lambda"}
 }
