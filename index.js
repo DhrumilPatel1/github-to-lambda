@@ -6,7 +6,7 @@ module.exports.handler =async function handler() {
         "headers": {
             "my_header": "my_value"
         },
-        "body": JSON.stringify(responseBody),
+        "body": JSON.stringify({"A":"a","B":"b"}),
         "isBase64Encoded": false
     };
 }
